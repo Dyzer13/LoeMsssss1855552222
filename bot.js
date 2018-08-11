@@ -578,7 +578,7 @@ discrim = "00"+discrim
 if(discrim.length == 3){
 discrim = "0"+discrim
 }
-
+});
 
 ///all Reghit Resverd 2018/2019 DyzerYT
 client.login(process.env.BOT_TOKEN);

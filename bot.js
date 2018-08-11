@@ -556,7 +556,7 @@ client.on('guildMemberRemove', member => {
 client.on('message',function(message) {
   if(!message.channel.guild) return;
 
-    if (message.content "--SAdiscrim") {
+    if (message.content === "--SAdiscrim") {
 let messageArray = message.content.split(" ");
 let args = messageArray.slice(1);
 

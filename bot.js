@@ -67,6 +67,21 @@ client.on('message', msg => {
     }
 })
 
+client.on('message', message => { 
+    if (message.content.startsWith(prefix + 'ranks')) {
+
+        const Rank = message.guild.roles.map(e => e.toString()).join(" ");
+
+        const RankList = new Discord.RichEmbed()
+            .setTitle('➠ Roles.') 
+            .setAuthor(message.guild.name, message.guild.iconURL) 
+            .setColor('RANDOM') 
+            .setDescription(Rank) 
+            .setFooter(message.guild.name) 
+        message.channel.send(RankList) 
+    }
+});
+
 client.on('message', message => {
     let messageArray = message.content.split(" ");
     let cmd = messageArray[0];

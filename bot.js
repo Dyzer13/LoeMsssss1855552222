@@ -661,26 +661,7 @@ message.channel.sendMessage('**Channel Was Succsesfluy Created**')
     }
 });
 
-client.on('guildMemberAdd', member => {
-    const botCount = member.guild.members.filter(m=>m.user.bot).size
-    const memberCount = [member.guild.memberCount] - [botCount]
-    client.channels.get('477548562541183026').setName(`⟫『 ${memberCount} عدد الاعضاء 』⟪`);
-});
 
-client.on('message', message => { 
-    if (message.content.startsWith('--SArole')) {
-
-        const Rank = message.guild.roles.map(e => e.toString()).join(" ");
-
-        const RankList = new Discord.RichEmbed()
-            .setTitle('➠ Roles.') 
-            .setAuthor(message.guild.name, message.guild.iconURL) 
-            .setColor('RANDOM') 
-            .setDescription(List) 
-            .setFooter(message.guild.name) 
-        message.channel.send(RankList) 
-    }
-});
 
 ///all Reghit Resverd 2018/2019 DyzerYT
 client.login(process.env.BOT_TOKEN);

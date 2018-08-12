@@ -67,20 +67,6 @@ client.on('message', msg => {
     }
 })
 
-client.on('message', message => { 
-    if (message.content.startsWith(prefix + 'ranks')) {
-
-        const Rank = message.guild.roles.map(e => e.toString()).join(" ");
-
-        const RankList = new Discord.RichEmbed()
-            .setTitle('➠ Roles.') 
-            .setAuthor(message.guild.name, message.guild.iconURL) 
-            .setColor('RANDOM') 
-            .setDescription(Rank) 
-            .setFooter(message.guild.name) 
-        message.channel.send(RankList) 
-    }
-});
 
 client.on('message', message => {
     let messageArray = message.content.split(" ");
@@ -114,32 +100,6 @@ client.on('message', message => {
   }
 });
 
-client.on('message', message => {
-    let messageArray = message.content.split(" ");
-    let cmd = messageArray[0];
-    let args = messageArray.slice(0);
-    let prefix = '!!';
-    let coins = require("./coins.json");
-    
-if(cmd === `${prefix}coins`) {
-  //!coins
-  if(!coins[message.author.id]){
-    coins[message.author.id] = {
-      coins: 0
-    };
-  }
-
-  let uCoins = coins[message.author.id].coins;
-
-
-  let coinEmbed = new Discord.RichEmbed()
-  .setAuthor(message.author.username)
-  .setColor("#00FF00")
-  .addField("💸", uCoins);
-
-  message.channel.send(coinEmbed).then(msg => {msg.delete(5000)});
-}
-});
 
 client.on("guildMemberAdd", function(member) {
     const wc = member.guild.channels.find("name", "☄👋welcome")

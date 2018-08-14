@@ -4,7 +4,7 @@ const client = new Discord.Client();
 const prefix = '--SA';
 client.on('ready', function(){    
     var ms = 40000 ;    
-    var setGame = ['--SAhelp','SPEED ART'];    
+    var setGame = ['تبي تصميم','كلمني خاص'];    
     var i = -1;    
     var j = 0;    
     setInterval(function (){    
